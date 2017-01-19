@@ -14,16 +14,41 @@ public void setup()
     }
   }
 }
+public String nospace(String word1)
+{
+
+}
 public boolean palindrome(String word)
 {
-  //your code here
+  String pal = new String();
+  String nospace = new String();
+
+  for(int i = 0; i < word.length(); i++)
+  {
+    if(Character.isLetter(word.charAt(i))==true)
+    {
+      nospace = nospace + word.charAt(i);
+    }
+  }
+
+  pal = nospace;
+
+  for(int i = word.length()-1; i>=0; i--)
+  {
+    pal = pal + word.charAt(i);
+  }
+  if(pal.equals(word))
+  {
+    return true;
+  }
   return false;
 }
 public String reverse(String str)
 {
-    String sNew = new String();
-    //your code here
-    return sNew;
+  String rev = new String();
+  for(int i = str.length()-1; i>=0; i--)
+  {
+    rev = rev + str.charAt(i);
+  }
+  return rev;
 }
-
-
