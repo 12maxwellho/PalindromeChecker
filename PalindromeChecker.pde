@@ -14,35 +14,24 @@ public void setup()
     }
   }
 }
-public String nospace(String word1)
-{
 
-}
 public boolean palindrome(String word)
 {
   String pal = new String();
-  String nospace = new String();
+  pal = nospace(pal);
+  pal = nocase(pal);
+  pal = reverse(word);
+  String mod = new String();
+  mod = nospace(word);
+  mod = nocase(word);
 
-  for(int i = 0; i < word.length(); i++)
-  {
-    if(Character.isLetter(word.charAt(i))==true)
-    {
-      nospace = nospace + word.charAt(i);
-    }
-  }
-
-  pal = nospace;
-
-  for(int i = word.length()-1; i>=0; i--)
-  {
-    pal = pal + word.charAt(i);
-  }
-  if(pal.equals(word))
+  if(pal.equals(mod))
   {
     return true;
   }
   return false;
 }
+
 public String reverse(String str)
 {
   String rev = new String();
@@ -51,4 +40,23 @@ public String reverse(String str)
     rev = rev + str.charAt(i);
   }
   return rev;
+}
+
+public String nospace(String word1)
+{
+  String blank1 = new String();
+  for(int i = 0; i<word1.length(); i++)
+  {
+    if(Character.isLetter(word1.charAt(i)))
+    {
+      blank1 = blank1 + word1.charAt(i);
+    }
+  }
+  return blank1;
+}
+public String nocase(String word2)
+{
+  String blank2 = new String();
+  blank2 = word2.toLowerCase();
+  return blank2;
 }
