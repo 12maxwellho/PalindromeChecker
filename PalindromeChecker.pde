@@ -18,14 +18,11 @@ public void setup()
 public boolean palindrome(String word)
 {
   String pal = new String();
-  pal = nospace(pal);
+  pal = nospace(word);
   pal = nocase(pal);
-  pal = reverse(word);
-  String mod = new String();
-  mod = nospace(word);
-  mod = nocase(word);
 
-  if(pal.equals(mod))
+
+  if(reverse(pal).equals(pal))
   {
     return true;
   }
